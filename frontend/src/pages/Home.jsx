@@ -19,7 +19,7 @@ export default function Home(){
       </div>
 
       <aside>
-        <div className="card">
+        <div className="card" style={{background:'#e5e5e5'}}>
           <h3>About</h3>
           {/* <p style={{color:'#374151'}}>iYap — a simple blog built with the MERN stack.</p> */}
           <p>Developed by:</p>

@@ -18,21 +18,21 @@ export default function Navbar(){
         <div className="logo">Y</div>
         <div>
           <h1>iYap</h1>
-          <div style={{fontSize:12,color:'#6b7280'}}>MERN Blog</div>
+          <div style={{fontSize:12,color:'white'}}>MERN Blog</div>
         </div>
       </Link>
 
       <div className="nav-actions">
-        <Link to="/" style={{textDecoration:'none',color:'#374151'}}>Home</Link>
-        {user && user.role === 'admin' && <Link to="/admin" style={{textDecoration:'none',color:'#374151'}}>Dashboard</Link>}
+        <Link to="/" style={{textDecoration:'none',color:'#FFFFFF'}}>Home</Link>
+        {user && user.role === 'admin' && <Link to="/admin" style={{textDecoration:'none',color:'#FFFFFF'}}>Dashboard</Link>}
         {!user ? (
           <>
-            <Link to="/login" className="btn secondary">Login</Link>
+            <Link to="/login" className="btn">Login</Link>
             <Link to="/register" className="btn">Register</Link>
           </>
         ) : (
           <>
-            <div style={{color:'#374151'}}>Hi, {user.role}</div>
+            <div style={{color:'#e7d7c1'}}>Hi, {user.role}</div>
             <button className="btn" onClick={doLogout}>Logout</button>
           </>
         )}

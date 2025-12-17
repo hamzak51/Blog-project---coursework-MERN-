@@ -24,7 +24,7 @@ export default function AdminDashboard(){
     <div>
       <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
         <h2>Admin Dashboard</h2>
-        <Link to="/admin/new" className="btn">Create New</Link>
+        <Link to="/admin/new" className="btn">Add New Post</Link>
       </div>
 
       <div style={{display:'grid',gap:10}}>
@@ -36,7 +36,7 @@ export default function AdminDashboard(){
             </div>
             <div style={{display:'flex',gap:8}}>
               <button className="btn secondary" onClick={()=>navigate(`/admin/edit/${p._id}`)}>Edit</button>
-              <button className="btn" style={{background:'#ef4444'}} onClick={()=>handleDelete(p._id)}>Delete</button>
+              <button className="btn" style={{background:'#c1121f'}} onClick={()=>handleDelete(p._id)}>Delete</button>
             </div>
           </div>
         ))}
