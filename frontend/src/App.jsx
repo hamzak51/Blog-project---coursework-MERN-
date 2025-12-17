@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/admin/edit/:id" element={<RequireAdmin><PostEditor /></RequireAdmin>} />
         </Routes>
       </main>
-      <footer className="footer">© {new Date().getFullYear()} BlogSphere</footer>
+      <footer className="footer">© {new Date().getFullYear()} iYap</footer>
     </div>
   )
 }

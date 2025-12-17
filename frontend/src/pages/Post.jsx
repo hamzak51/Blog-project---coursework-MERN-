@@ -49,7 +49,7 @@ export default function PostPage(){
           <div style={{color:'#6b7280'}}>{post.views || 0} views</div>
         </div>
 
-        <CommentList postId={post._id} initial={comments} onCommentAdded={(c)=>setComments([c,...comments])} />
+        <CommentList postId={post._id} initial={comments} onCommentAdded={(c) => setComments(prev => [c, ...prev])}/>
       </article>
 
       <aside>

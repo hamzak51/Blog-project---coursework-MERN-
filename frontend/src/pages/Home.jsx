@@ -21,7 +21,7 @@ export default function Home(){
       <aside>
         <div className="card">
           <h3>About</h3>
-          <p style={{color:'#374151'}}>BlogSphere — a simple blog built with the MERN stack.</p>
+          <p style={{color:'#374151'}}>iYap — a simple blog built with the MERN stack.</p>
         </div>
         <div className="card" style={{marginTop:16}}>
           <h3>Tags</h3>

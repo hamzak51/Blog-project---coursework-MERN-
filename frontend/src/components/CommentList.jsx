@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import api from '../services/api'
 import { getCurrentUser } from '../utils/auth'
 
@@ -6,13 +6,17 @@ export default function CommentList({ postId, initial = [], onCommentAdded }){
   const [comments, setComments] = useState(initial)
   const [body, setBody] = useState('')
 
+  useEffect(() => {
+    setComments(initial)
+  }, [initial])
+
   async function submit(e){
     e.preventDefault()
     const user = getCurrentUser()
     if (!user) return alert('Please login to comment')
     try {
       const res = await api.post('/comments', { postId, body })
-      setComments([res.data, ...comments])
+      setComments(prev => [res.data, ...prev])
       setBody('')
       onCommentAdded?.(res.data)
     } catch (err) {

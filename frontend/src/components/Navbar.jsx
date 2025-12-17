@@ -15,9 +15,9 @@ export default function Navbar(){
   return (
     <header className="navbar">
       <Link to="/" className="brand">
-        <div className="logo">BS</div>
+        <div className="logo">Y</div>
         <div>
-          <h1>BlogSphere</h1>
+          <h1>iYap</h1>
           <div style={{fontSize:12,color:'#6b7280'}}>MERN Blog</div>
         </div>
       </Link>
