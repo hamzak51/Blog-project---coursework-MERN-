@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const slugify = require('../utils/slug');
+const auth = require('../middleware/auth.js');
 
 // Get all posts
 router.get('/', async (req, res) => {
@@ -35,5 +36,39 @@ router.get('/:id/recommended', async (req, res) => {
 
   res.json(recommended);
 });
+
+
+
+
+router.post('/:id/like', auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id)
+    if (!post) return res.status(404).json({ msg: 'Post not found' })
+
+    const userId = req.user.id
+
+    const alreadyLiked = post.likes.includes(userId)
+
+    if (alreadyLiked) {
+      // UNLIKE
+      post.likes = post.likes.filter(
+        id => id.toString() !== userId
+      )
+    } else {
+      // LIKE
+      post.likes.push(userId)
+    }
+
+    await post.save()
+
+    res.json({
+      likes: post.likes.length,
+      liked: !alreadyLiked
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ msg: 'Server error' })
+  }
+})
 
 module.exports = router;

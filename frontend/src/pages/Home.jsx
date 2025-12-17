@@ -21,15 +21,17 @@ export default function Home(){
       <aside>
         <div className="card">
           <h3>About</h3>
-          <p style={{color:'#374151'}}>iYap — a simple blog built with the MERN stack.</p>
+          {/* <p style={{color:'#374151'}}>iYap — a simple blog built with the MERN stack.</p> */}
+          <p>Developed by:</p>
+          <p>Muhammad Hamza Khan & Eisha Saleem</p>
         </div>
-        <div className="card" style={{marginTop:16}}>
+        {/* <div className="card" style={{marginTop:16}}>
           <h3>Tags</h3>
           <div style={{display:'flex',gap:8,flexWrap:'wrap',marginTop:8}}>
             <span style={{background:'#eef2ff',padding:'6px 8px',borderRadius:6}}>Tech</span>
             <span style={{background:'#eef2ff',padding:'6px 8px',borderRadius:6}}>Life</span>
           </div>
-        </div>
+        </div> */}
       </aside>
     </div>
   )
